@@ -1658,6 +1658,11 @@ ol.comments-list > li > ol.children {
   margin-top: 15px;
 }
 
+/*长评论 回复按钮影响回复内容错位 fixed by Lensual*/
+.comment-content > .comment-metadata {
+    margin-bottom: 4px;
+}
+
 /*respond*/
 #replytitle {
     font-size: 1.2rem;
