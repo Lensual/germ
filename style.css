@@ -1649,6 +1649,11 @@ ol.comments-list > li > ol.children {
     display:none;
 }
 
+/*允许评论者设置email和url fixed by Lensual*/
+#commentform .replay_email, #commentform .replay_url {
+    display:inherit !important;
+}
+
 #commentform .text_area {
     height: 150px;
   margin-top: 15px;
