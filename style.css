@@ -169,8 +169,17 @@ img {
     height: auto;
 }
 
+/** 链接渐变效果 by Lensual **/
 a {
-    color: #333;
+	text-decoration:none;
+	outline:none;
+	blr:expression(this.onFocus=this.blur());
+	-webkit-transition:.5s;
+	-moz-transition:.5s;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	color: #333;
+	text-decoration: none;
 }
 
 a:hover {
