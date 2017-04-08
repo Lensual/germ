@@ -6,6 +6,27 @@
 
     <?php wp_head(); ?>
     <?php if( dopt('d_headcode_b') != '' ) echo dopt('d_headcode'); ?>
+	<?php
+		//背景自动切换 相关CSS by Lensual
+		$bgimg_urls = get_bgimgs_url();
+		echo <<<EOF
+<style type="text/css">
+body {
+	transition: background-image 1.7s linear;
+	-webkit-transition: background-image 1.7s linear;
+	background-image: url('
+EOF;
+echo $bgimg_urls[array_rand($bgimg_urls, 1)];
+echo <<<EOF
+');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+    background-position: center;
+	background-size: inherit !important;
+}
+</style>
+EOF;
+	?>
 </head>
 
 <body class="nav-open">
