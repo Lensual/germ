@@ -23,6 +23,7 @@ echo <<<EOF
 	background-repeat: no-repeat;
     background-position: center;
 	background-size: inherit !important;
+	height: 100vh;
 }
 </style>
 EOF;
