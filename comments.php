@@ -21,7 +21,7 @@
             <p class="input-row replay_author"><input type="text" name="author" class="text_input" id="author" size="22" tabindex="1" placeholder="署名 *"/>
             </p>
 
-            <p class="input-row replay_email"><input type="text" name="email" class="text_input" id="email" size="22" tabindex="2" placeholder="<?php _e('E-MAIL', 'quench');?> *" value="<?php echo rand().'@random.mail' ?>"/>
+            <p class="input-row replay_email"><input type="text" name="email" class="text_input" id="email" size="22" tabindex="2" placeholder="<?php _e('E-MAIL', 'quench');?> *"/>
             </p>
 
             <p class="input-row replay_url"><input type="text" name="url" class="text_input" id="url" size="22" tabindex="3"  placeholder="<?php _e('WEBSITE', 'quench');?>"/>

@@ -169,8 +169,17 @@ img {
     height: auto;
 }
 
+/** 链接渐变效果 by Lensual **/
 a {
-    color: #333;
+	text-decoration:none;
+	outline:none;
+	blr:expression(this.onFocus=this.blur());
+	-webkit-transition:.5s;
+	-moz-transition:.5s;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	color: #333;
+	text-decoration: none;
 }
 
 a:hover {
@@ -1649,9 +1658,19 @@ ol.comments-list > li > ol.children {
     display:none;
 }
 
+/*允许评论者设置email和url fixed by Lensual*/
+#commentform .replay_email, #commentform .replay_url {
+    display:inherit !important;
+}
+
 #commentform .text_area {
     height: 150px;
   margin-top: 15px;
+}
+
+/*长评论 回复按钮影响回复内容错位 fixed by Lensual*/
+.comment-content > .comment-metadata {
+    margin-bottom: 4px;
 }
 
 /*respond*/

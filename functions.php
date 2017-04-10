@@ -1105,4 +1105,14 @@ function my_wp_list_comments( $args = array(), $comments = null) {
     }
 }
 
+//获取背景所有图片的url路径 by Lensual
+function get_bgimgs_url(){
+	$files = array_diff(scandir(get_stylesheet_directory()."/images/background/"), array('..', '.'));
+	foreach	($files as &$filename) {
+		$filename = get_stylesheet_directory_uri()."/images/background/".$filename;
+	}
+	unset($filename);
+	return $files;
+}
+
 ?>
