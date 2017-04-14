@@ -139,6 +139,20 @@ $options = array (
     array( "id" => "d_footcode","type" => "textarea","std" => "这部分代码显示在页面最底部，推荐放入 js 的引用"),
 
     array( "type" => "endtag"),
+	
+	
+	//背景图片
+    array( "name" => "背景图片","type" => "section" ),
+
+    array( "name" => "背景图片总开关", "type" => "tit"),
+    array( "id" => "d_backgound_image_b", "type" => "checkbox" ),
+	
+	array( "name" => "背景图片自动切换", "type" => "tit"),
+    array( "id" => "d_backgound_image_autoswitch_b", "type" => "checkbox" ),
+	
+	
+
+    array( "type" => "endtag"),
 
 );
 
@@ -336,6 +350,7 @@ function mytheme_admin() {
                 <li>功能开关</li>
                 <li>小工具设置</li>
                 <li>首尾代码</li>
+                <li>背景图片</li>
             </ul>
         </div>
         <?php foreach ($options as $value) { switch ( $value['type'] ) { case "": ?>

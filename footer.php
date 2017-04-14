@@ -20,16 +20,17 @@
         if( dopt('d_footcode_b') != '' )
             echo dopt('d_footcode');
     ?>
-	<!-- 背景自动切换s by Lensual -->
+	<?php if(dopt('d_backgound_image_b') != '' && dopt('d_backgound_image_autoswitch_b') != '') { ?>
+	<!-- 背景图片自动切换s by Lensual -->
 	<script type="text/javascript">
 	var switchSpeed = 10000;  //图片切换时间
 	var onerrorRetry = 5000;  //重试时间
 	var bgImgUrlArr = new Array(<?php
-		$str = "";
+		$str = '';
 		foreach (get_bgimgs_url() as $url){
-			$str .=  "\"".$url."\",";
+			$str .=  '"'.$url.'",';
 		}
-		echo rtrim($str,",").");\n";
+		echo rtrim($str,',').");\n";
 	?>
 	var errorTimes = 0;
 	var preLoadBgImg_complete = false;
@@ -51,7 +52,6 @@
 			onerror = null;
 			errorTimes++;
 			setTimeout("preLoadBgImg()", onerrorRetry);  //重新加载
-			return;
 		};
 		img.onload = function(){
 			onload = null;
@@ -77,7 +77,8 @@
 		preLoadBgImg();
 	}
 	</script>
-	<!-- 背景自动切换e by Lensual -->
+	<!-- 背景图片自动切换e by Lensual -->
+	<?php } ?>
 
 </body>
 </html>

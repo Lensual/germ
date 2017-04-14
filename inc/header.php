@@ -6,31 +6,9 @@
 
     <?php wp_head(); ?>
     <?php if( dopt('d_headcode_b') != '' ) echo dopt('d_headcode'); ?>
-	<?php
-		//背景自动切换 相关CSS by Lensual
-		$bgimg_urls = get_bgimgs_url();
-		echo <<<EOF
-<style type="text/css">
-body {
-	transition: background-image 1.7s linear;
-	-webkit-transition: background-image 1.7s linear;
-	background-image: url('
-EOF;
-echo $bgimg_urls[array_rand($bgimg_urls, 1)];
-echo <<<EOF
-');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-    background-position: center;
-	background-size: inherit !important;
-	height: 100vh;
-}
-</style>
-EOF;
-	?>
 </head>
 
-<body class="nav-open">
+<body class="nav-open<?php if (dopt('d_backgound_image_b') != '') echo ' background-image-enabled'; ?>"<?php if (dopt('d_backgound_image_b') != '') { $bgimg_urls = get_bgimgs_url(); echo " style=\"background-image: url('".$bgimg_urls[array_rand($bgimg_urls, 1)]."');\""; } ?>>
 <?php
     if( is_mobile() ) {
     	echo '<div id="mobile-nav" class="f12 yahei"><form class="mm-search" action="'.get_bloginfo('url').'" method="get" role="search"><input type="text" autocomplete="off" placeholder="Search" name="s" value=""><input id="mobilesubmit" type="submit" value="Search"></form> ';

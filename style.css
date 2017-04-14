@@ -220,6 +220,17 @@ body {
     background-size: 100% 100%;*/
 }
 
+/** 背景自动切换 CSS3 渐变 by Lensual **/
+body.background-image-enabled {
+    transition: background-image 1.7s linear;
+    -webkit-transition: background-image 1.7s linear;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit !important;
+    height: 100vh;
+}
+
 .f12 {
     font-size: 12px;
     font-size: 0.75rem
