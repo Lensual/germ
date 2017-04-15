@@ -252,7 +252,7 @@ function mytheme_admin() {
     .d_check input{vertical-align: -3px;margin-right:3px;}
 
     .d_number{color: #444;}
-    .d_num{width:60px;border-color:#BED1DD;}
+    .d_num{width:80px;border-color:#BED1DD;}
 
     .d_tarea{width:98%;min-height:64px;border: solid 1px #dadada;
         border-left-color: #ccc;
