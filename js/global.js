@@ -512,3 +512,58 @@ if($saying.length) {
     saying_refresh();
     $saying.click(saying_refresh);
 }
+
+
+//背景图片自动切换
+var errorTimes = 0;
+var preLoadBgImg_complete = false;
+var preLoadBgImg_complete_url = '';
+var stopWatch_timeout = false;
+var bgImgUrlArr_length = 0;
+var bgImgUrlArr_index = {};
+//遍历背景图片数组取index
+for(var key in ajax.bgImgUrlArr){
+    bgImgUrlArr_index[bgImgUrlArr_length++] = key;
+}
+//预读背景图片
+function preLoadBgImg() {
+    var img = new Image();
+    do
+	{
+		var url = ajax.bgImgUrlArr[bgImgUrlArr_index[Math.floor(Math.random() * bgImgUrlArr_length)]];  //随机
+	}
+	while ($("body").css("background-image") == "url(" + url + ")")  //避免重复
+	img.src = url
+	img.onerror=function(){
+		console.error('Error on loading background-image:%o',url);
+		onerror = null;
+		errorTimes++;
+		setTimeout("preLoadBgImg()", ajax.onerrorRetry);  //重新加载
+	};
+	img.onload = function(){
+		onload = null;
+		preLoadBgImg_complete_url = url;
+		preLoadBgImg_complete = true;
+		//console.debug('preLoadBgImg_complete_url:%o',preLoadBgImg_complete_url);
+		if (stopWatch_timeout){
+			switchBgImg();
+		}
+	};
+}
+//计时
+function stopWatch() {
+	stopWatch_timeout = true;
+	//console.debug('stopWatch_timeout');
+	if (preLoadBgImg_complete){
+		switchBgImg();
+	}
+}
+//切换背景
+function switchBgImg() {
+	$("body").css("background-image","url(" + preLoadBgImg_complete_url + ")");  //已经使用 CSS3 做渐变动画
+	preLoadBgImg_complete = false;
+	preLoadBgImg_complete_url = "";
+	stopWatch_timeout = false;
+	setTimeout("stopWatch()", ajax.switchInterval);  //下一轮开始
+	preLoadBgImg();
+}
