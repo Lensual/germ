@@ -56,21 +56,17 @@ function echoJSvar() {
     $data['fly2'] = $sr_2;
     
     //背景图片设置
-    $switchSpeed = 10000;  //图片切换时间
-    $onerrorRetry = 5000;  //重试时间
-	$bgImgUrlArr = get_bgimgs_url();
-    //$bgImgUrlArr = new Array(<?php
-    //    $str = '';
-    //    foreach (get_bgimgs_url() as $url){
-    //        $str .=  '"'.$url.'",';
-    //    }
-    //    echo rtrim($str,',').");\n";
+	if (dopt('d_backgound_image_b')){
+		$data['switchInterval'] = dopt('d_backgound_image_switchInterval');
+        $data['onerrorRetry'] = dopt('d_backgound_image_onerrorRetry');
+        $data['bgImgUrlArr'] = get_bgimgs_url();
+	}
+    
+	
     
 
 
-    $data['switchSpeed'] = $switchSpeed;
-    $data['onerrorRetry'] = $onerrorRetry;
-    $data['bgImgUrlArr'] = $bgImgUrlArr;
+    
 
     wp_localize_script('jquery', 'ajax', $data);
 }

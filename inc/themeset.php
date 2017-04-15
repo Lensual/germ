@@ -150,7 +150,11 @@ $options = array (
 	array( "name" => "背景图片自动切换", "type" => "tit"),
     array( "id" => "d_backgound_image_autoswitch_b", "type" => "checkbox" ),
 	
+	array( "name" => "自动切换间隔(ms)", "type" => "tit"),
+    array( "id" => "d_backgound_image_switchInterval", "type" => "number" ),
 	
+	array( "name" => "错误重试间隔", "type" => "tit"),
+    array( "id" => "d_backgound_image_onerrorRetry", "type" => "number" ),
 
     array( "type" => "endtag"),
 

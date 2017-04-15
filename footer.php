@@ -36,7 +36,7 @@
 	}
 	
     $(document).ready(function() {
-		setTimeout("stopWatch()", ajax.switchSpeed);
+		setTimeout("stopWatch()", ajax.switchInterval);
 		preLoadBgImg();
 	});
 	function preLoadBgImg() {
@@ -75,7 +75,7 @@
 		preLoadBgImg_complete = false;
 		preLoadBgImg_complete_url = "";
 		stopWatch_timeout = false;
-		setTimeout("stopWatch()", ajax.switchSpeed);  //下一轮开始
+		setTimeout("stopWatch()", ajax.switchInterval);  //下一轮开始
 		preLoadBgImg();
 	}
 	</script>
