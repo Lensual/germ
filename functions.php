@@ -54,6 +54,23 @@ function echoJSvar() {
     }
     $data['fly1'] = $sr_1;
     $data['fly2'] = $sr_2;
+    
+    //背景图片设置
+    $switchSpeed = 10000;  //图片切换时间
+    $onerrorRetry = 5000;  //重试时间
+	$bgImgUrlArr = get_bgimgs_url();
+    //$bgImgUrlArr = new Array(<?php
+    //    $str = '';
+    //    foreach (get_bgimgs_url() as $url){
+    //        $str .=  '"'.$url.'",';
+    //    }
+    //    echo rtrim($str,',').");\n";
+    
+
+
+    $data['switchSpeed'] = $switchSpeed;
+    $data['onerrorRetry'] = $onerrorRetry;
+    $data['bgImgUrlArr'] = $bgImgUrlArr;
 
     wp_localize_script('jquery', 'ajax', $data);
 }
