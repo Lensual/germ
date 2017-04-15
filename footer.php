@@ -20,7 +20,9 @@
         if( dopt('d_footcode_b') != '' )
             echo dopt('d_footcode');
     ?>
-	<?php if(dopt('d_backgound_image_b') != '' && dopt('d_backgound_image_autoswitch_b') != '') { ?>
+	<?php if(dopt('d_backgound_image_b') != '' && 
+	    dopt('d_backgound_image_autoswitch_b') != '' &&
+		dopt('d_backgound_image_static_b') == '') { ?>
 	<!-- 背景图片自动切换s by Lensual -->
 	<script type="text/javascript">
     $(document).ready(function() {

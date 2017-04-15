@@ -156,6 +156,11 @@ $options = array (
 	array( "name" => "错误重试间隔", "type" => "tit"),
     array( "id" => "d_backgound_image_onerrorRetry", "type" => "number" ),
 
+	array( "name" => "静态背景图片（自动切换将失效）", "type" => "tit"),
+    array( "id" => "d_backgound_image_static_b","type" => "checkbox" ),
+    array( "id" => "d_backgound_image_static_url","type" => "text","class" => "d_inp_short","std" => ""),
+
+	
     array( "type" => "endtag"),
 
 );

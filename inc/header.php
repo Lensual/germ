@@ -8,7 +8,16 @@
     <?php if( dopt('d_headcode_b') != '' ) echo dopt('d_headcode'); ?>
 </head>
 
-<body class="nav-open<?php if (dopt('d_backgound_image_b') != '') echo ' background-image-enabled'; ?>"<?php if (dopt('d_backgound_image_b') != '') { $bgimg_urls = get_bgimgs_url(); echo " style=\"background-image: url('".$bgimg_urls[array_rand($bgimg_urls, 1)]."');\""; } ?>>
+<body class="nav-open<?php if (dopt('d_backgound_image_b') != '') echo ' background-image-enabled'; ?>"<?php 
+	if (dopt('d_backgound_image_b') != '') {
+		if (dopt('d_backgound_image_static_b') == '') {
+			$bgimg_urls = get_bgimgs_url();
+			echo " style=\"background-image: url('".$bgimg_urls[array_rand($bgimg_urls, 1)]."');\""; 
+		}else{
+			echo " style=\"background-image: url('".dopt('d_backgound_image_static_url')."');\"";
+		} 
+	} 
+?>>
 <?php
     if( is_mobile() ) {
     	echo '<div id="mobile-nav" class="f12 yahei"><form class="mm-search" action="'.get_bloginfo('url').'" method="get" role="search"><input type="text" autocomplete="off" placeholder="Search" name="s" value=""><input id="mobilesubmit" type="submit" value="Search"></form> ';
