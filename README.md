@@ -10,9 +10,16 @@
 
 - 超链接渐变颜色
 
-- 自动切换背景功能 https://github.com/Lensual/germ/issues/6
-  - 可以提前预缓存下一张背景图片
-  - 定时周期切换
+- 背景图片功能 [#6](https://github.com/Lensual/germ/issues/6)
+  - 可以提前预缓存下一张背景图片(Beta)
+  - 定时周期自动切换（可选静态）
+  - 引用Bing背景（开发中）
+  
+# 声明
+
+背景图片仅供样式参考，来自『秒速5センチメートル』片段截取。版权归所有者所有。
+
+该主题原作者是 [h2y](https://github.com/h2y)
 
 以下内容 为原作者 README.md
 
