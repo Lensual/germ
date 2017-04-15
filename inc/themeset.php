@@ -144,7 +144,7 @@ $options = array (
 	//背景图片 by Lensual
     array( "name" => "背景图片","type" => "section" ),
 
-	array( "id" => "test","type" => "text","std" => "背景图片功能 by Lensual, https://github.com/Lensual"),
+	array( "type" => "text","std" => "背景图片功能 by Lensual, https://github.com/Lensual"),
 	
     array( "name" => "背景图片总开关", "type" => "tit"),
     array( "id" => "d_backgound_image_b", "type" => "checkbox" ),
