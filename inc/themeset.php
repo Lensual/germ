@@ -141,9 +141,11 @@ $options = array (
     array( "type" => "endtag"),
 	
 	
-	//背景图片
+	//背景图片 by Lensual
     array( "name" => "背景图片","type" => "section" ),
 
+	array( "id" => "test","type" => "text","std" => "背景图片功能 by Lensual, https://github.com/Lensual"),
+	
     array( "name" => "背景图片总开关", "type" => "tit"),
     array( "id" => "d_backgound_image_b", "type" => "checkbox" ),
 	
@@ -151,14 +153,17 @@ $options = array (
     array( "id" => "d_backgound_image_autoswitch_b", "type" => "checkbox" ),
 	
 	array( "name" => "自动切换间隔(ms)", "type" => "tit"),
-    array( "id" => "d_backgound_image_switchInterval", "type" => "number" ),
+    array( "id" => "d_backgound_image_switchInterval", "type" => "number","std" => "10000" ),
 	
-	array( "name" => "错误重试间隔", "type" => "tit"),
-    array( "id" => "d_backgound_image_onerrorRetry", "type" => "number" ),
+	array( "name" => "错误重试间隔(ms)", "type" => "tit"),
+    array( "id" => "d_backgound_image_onerrorRetry", "type" => "number","std" => "5000" ),
+	
+	array( "name" => "背景图片预加载(Beta)", "type" => "tit"),
+    array( "id" => "d_backgound_image_preload_b", "type" => "checkbox" ),
 
 	array( "name" => "静态背景图片（自动切换将失效）", "type" => "tit"),
     array( "id" => "d_backgound_image_static_b","type" => "checkbox" ),
-    array( "id" => "d_backgound_image_static_url","type" => "text","class" => "d_inp_short","std" => ""),
+    array( "id" => "d_backgound_image_static_url","type" => "text","class" => "d_inp_short","std" => get_stylesheet_directory_uri().'/images/background/putyourbackgroundhere.jpg'),
 
 	
     array( "type" => "endtag"),

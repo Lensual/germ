@@ -26,8 +26,12 @@
 	<!-- 背景图片自动切换s by Lensual -->
 	<script type="text/javascript">
     $(document).ready(function() {
-		setTimeout("stopWatch()", ajax.switchInterval);
-		preLoadBgImg();
+		if(ajax.d_backgound_image_preload_b != ''){
+			setTimeout("stopWatch()", ajax.switchInterval);
+			preLoadBgImg();
+		}else{
+			setTimeout("preLoadBgImg()", ajax.switchInterval);
+		}
 	});
 	</script>
 	<!-- 背景图片自动切换e by Lensual -->

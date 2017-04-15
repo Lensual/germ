@@ -60,13 +60,8 @@ function echoJSvar() {
 		$data['switchInterval'] = dopt('d_backgound_image_switchInterval');
         $data['onerrorRetry'] = dopt('d_backgound_image_onerrorRetry');
         $data['bgImgUrlArr'] = get_bgimgs_url();
+		$data['d_backgound_image_preload_b'] = dopt('d_backgound_image_preload_b');
 	}
-    
-	
-    
-
-
-    
 
     wp_localize_script('jquery', 'ajax', $data);
 }

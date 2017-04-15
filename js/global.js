@@ -514,7 +514,7 @@ if($saying.length) {
 }
 
 
-//背景图片自动切换
+//背景图片自动切换 by Lensual
 var errorTimes = 0;
 var preLoadBgImg_complete = false;
 var preLoadBgImg_complete_url = '';
@@ -545,7 +545,7 @@ function preLoadBgImg() {
 		preLoadBgImg_complete_url = url;
 		preLoadBgImg_complete = true;
 		//console.debug('preLoadBgImg_complete_url:%o',preLoadBgImg_complete_url);
-		if (stopWatch_timeout){
+		if (stopWatch_timeout || ajax.d_backgound_image_preload_b == ''){
 			switchBgImg();
 		}
 	};
@@ -564,6 +564,10 @@ function switchBgImg() {
 	preLoadBgImg_complete = false;
 	preLoadBgImg_complete_url = "";
 	stopWatch_timeout = false;
-	setTimeout("stopWatch()", ajax.switchInterval);  //下一轮开始
-	preLoadBgImg();
+	if (ajax.d_backgound_image_preload_b != ''){
+		setTimeout("stopWatch()", ajax.switchInterval);  //下一轮开始
+		preLoadBgImg();
+	}else{
+		setTimeout("preLoadBgImg()", ajax.switchInterval);
+	}
 }
